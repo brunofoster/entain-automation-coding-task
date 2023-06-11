@@ -1,3 +1,4 @@
+/// <reference types="Cypress" />
 import races from "../support/pages/races";
 
 describe('Countdown Timer', () => {
@@ -15,11 +16,11 @@ describe('Countdown Timer', () => {
       cy.wait('@dummyData', { timeout: 60000 }).then(() => {
         races.raceNames.should('have.length', 1);
         cy.clock(now);
-        races.getTimeToJump(1).should('have.text', '4m');
+        races.getTimeToJump(0).should('have.text', '4m');
         cy.tick(1000);
-        races.getTimeToJump(1).should('have.text', '3m 59s');
+        races.getTimeToJump(0).should('have.text', '3m 59s');
         cy.tick(1000);
-        races.getTimeToJump(1).should('have.text', '3m 58s');
+        races.getTimeToJump(0).should('have.text', '3m 58s');
         cy.clock().invoke('restore');
       });
     });
@@ -36,10 +37,10 @@ describe('Countdown Timer', () => {
       cy.wait('@dummyData', { timeout: 60000 }).then(() => {
         races.raceNames.should('have.length', 1);
         cy.clock(now);
-        races.getTimeToJump(1).should('not.include.text', '-');
+        races.getTimeToJump(0).should('not.include.text', '-');
         // Set timer to 1 second past jump
         cy.tick(301000);
-        races.getTimeToJump(1).should('include.text', '-');
+        races.getTimeToJump(0).should('include.text', '-');
         cy.clock().invoke('restore');
       });
     });
@@ -55,7 +56,7 @@ describe('Countdown Timer', () => {
       cy.visit('/');
       cy.wait('@dummyData', { timeout: 60000 }).then(() => {
         races.raceNames.should('have.length', 1);
-        races.getTimeToJump(1).should('include.text', '-4m 5');
+        races.getTimeToJump(0).should('include.text', '-4m 5');
         // Wait 5 seconds to exceed 5 mins since jump
         cy.wait(5000);
         // Reload to get API call to run again to update page display

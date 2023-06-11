@@ -47,11 +47,18 @@ describe('Page Content', () => {
     cy.wait('@raceCheck', { timeout: 60000 }).then((interception) => {
       // Sort API results so the display order can be checked
       let allRaces = races.getSortedRaces(interception);
+      let now = Math.floor(new Date().getTime() / 1000) * 1000;
+      cy.clock(now);
       for (let i = 0; i < 5; i++) {
+        let diff = new Date(allRaces[i][0]).getTime() - now;
+        let mins = Math.trunc(diff / 60000);
+        let sec = Math.round((diff - (mins * 60000)) / 1000);
+        let timerText = (mins == 0) ? sec + 's' : (mins < 5 ? mins + 'm ' + Math.abs(sec) + 's' : mins + "m");
+        races.getTimeToJump(i).should('contain.text', timerText);
         races.getRaceNumber(i + 1).should('contain.text', 'R' + allRaces[i][3]);
         races.getRaceLocation(i + 1).should('contain.text', allRaces[i][4]);
-        races.getTimeToJump(i + 1).should('not.be.be.empty');
       }
+      cy.clock().invoke('restore');
     });
   });
 

@@ -19,7 +19,7 @@ class races {
    }
 
    getTimeToJump(index) {
-      return cy.get(':nth-child(' + index + ') > :nth-child(3) > :nth-child(1) > :nth-child(2)');
+      return cy.get('.race-name ~ p').eq(index);
    }
 
    uncheckCategory(category) {
