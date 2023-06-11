@@ -1,0 +1,45 @@
+{
+    "category_race_map": {
+        "9daef0d7-bf3c-4f50-921d-8e818c60fe61": {
+            "race_ids": [
+                "greyhound1"
+            ]
+        }
+    },
+    "race_summaries": {
+        "greyhound1": {
+            "race_id": "greyhound1",
+            "race_name": "Greyhound race 1",
+            "race_number": 10,
+            "meeting_id": "ead3d7d6-35d5-44ac-af0f-8e9e529e16ca",
+            "meeting_name": "Greyhound fake race",
+            "category_id": "9daef0d7-bf3c-4f50-921d-8e818c60fe61",
+            "advertised_start": "2023-06-10T13:15:00Z",
+            "race_form": {
+                "distance": 272,
+                "distance_type": {
+                    "name": "Metres",
+                    "short_name": "m"
+                },
+                "track_condition": {
+                    "name": "Good",
+                    "short_name": "good"
+                },
+                "weather": {
+                    "name": "FINE"
+                },
+                "race_comment": "BRICK TOP (8) is going well, finishing in the placings twice in a row. Not beaten far last time when a half a length second (18.54) in a Grade 5 at Richmond. Good beginner but will need a little luck early crossing from on outside draw. Can make amends this time. HOOKED ON JACK (10) has a strong record this trip including three wins from six starts. Placed last time (25.70) at Muswellbrook in a Grade 5, finishing second and beaten a nose. With even luck and a clean start can sneak into the finish. Wouldn't surprise to see last-start winner REDSHIFT CHARLIE (3) feature in the finish again.",
+                "additional_data": "{\"revealed_race_info\":{\"track_name\":\"The Gardens\",\"state\":\"NSW\",\"country\":\"AUS\",\"number\":10,\"race_name\":\"Steve Whalland Race Images\",\"time\":\"2023-06-10T12:55:00Z\"}}"
+            },
+            "venue_id": "1068331f-32f8-42f6-b3ce-d8573358464e",
+            "venue_name": "The Gardens",
+            "venue_state": "NSW",
+            "venue_country": "AUS",
+            "video": {
+                "channel": {
+                    "channel_id": "bd93ca0c-63fc-4bf3-b5b1-efcd208546dc"
+                }
+            }
+        }
+    }
+}

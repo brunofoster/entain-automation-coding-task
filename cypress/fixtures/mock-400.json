@@ -1,0 +1,6 @@
+{
+    "id": "neds.api.racing",
+    "code": 400,
+    "detail": "missing count",
+    "status": "Bad Request"
+}

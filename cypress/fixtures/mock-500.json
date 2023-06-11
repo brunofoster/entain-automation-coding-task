@@ -1,0 +1,6 @@
+{
+    "id": "go.micro.api",
+    "code": 500,
+    "detail": "error during request: an error occurred while calling neds.api.racing.Racing.NextRacesCategoryGroup: json: cannot unmarshal string into Go struct field NextRacesCategoryGroupRequest.categories of type []uuid.UUID",
+    "status": "Internal Server Error"
+}
